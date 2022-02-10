@@ -1,0 +1,104 @@
+<div class="row justify-content-center">
+<div class="col-6" style="text-align: center;">
+  <h3>Sprint #{{sprintId}} time report</h3>
+</div>
+
+</div>
+
+
+  
+<form>
+
+  <div class="row justify-content-center">
+
+
+    <div class="col-4">
+  <div class="form-group"> 
+    
+    <select  class="form-select"
+      name="id"
+      [(ngModel)]="chartPick.id">
+  
+        <option *ngFor="let pref of participantPreferences; index as indexOfelement" value={{indexOfelement}}> {{pref.username}} </option>
+        <option  value="sum">Time report summary</option>
+    
+    </select> 
+    <label >Choose participant time preferences</label>
+  </div>
+</div>
+
+<div class="col-2">
+  <div class="form-group ">
+    <button class="btn btn-primary" (click)="onSubmit()">get chart<input  type = "submit" value=""style="display: none"></button>
+  </div>
+</div>
+
+
+
+</div>
+<!-- row -->
+ 
+
+
+</form>
+
+
+  <div class="col-6"></div>
+<!-- e6 -->
+<div class="row justify-content-center"></div>
+<!-- row -->
+
+
+
+
+
+
+<div class="row justify-content-center">
+
+<app-sprint-burndown></app-sprint-burndown>
+</div>
+
+
+
+    <div *ngFor="let pref of participantPreferences; index as indexOfelement" >
+    <google-chart
+     
+    
+    *ngIf="picked == indexOfelement"
+
+    [type]="chartData.type" 
+
+    [data]="chartData.data" 
+
+    [columns]="chartData.columnNames" 
+
+    [options]="chartData.options" 
+
+    [width]="chartData.width"
+
+    [height]="chartData.height">
+
+      
+
+</google-chart>
+</div>
+
+<google-chart *ngIf="picked == 'sum'"
+
+    [type]="chartData.type" 
+
+    [data]="chartData.data" 
+
+    [columns]="chartData.columnNames" 
+
+    [options]="chartData.options" 
+
+    [width]="chartData.width"
+
+    [height]="chartData.height">
+
+      
+
+</google-chart>
+
+

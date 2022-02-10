@@ -1,0 +1,17 @@
+
+<div *ngFor="let sprint of sprintList;">
+    
+        
+        <h5 *ngIf = "sprint.current">sprint {{sprint.id}} (current) 
+            <a style="text-decoration: none; color: #fff;" [routerLink]="['/sprint/',sprint.id]" > <button class="btn btn-sm btn-outline-light">Visit</button> </a>
+        </h5> 
+        <h5 *ngIf = "sprint.inPlaning">Sprint {{sprint.id}} (in planing) 
+            <a style="text-decoration: none; color: #fff;" [routerLink]="['/sprint/',sprint.id]" > <button class="btn btn-sm btn-outline-light">Visit</button> </a>
+        </h5>
+        <h5 *ngIf = "sprint.finished">Sprint {{sprint.id}} (finished)
+            <a style="text-decoration: none; color: #fff;" [routerLink]="['/sprint/',sprint.id]" > <button class="btn btn-sm btn-outline-light">Visit</button> </a>
+        </h5>
+    
+    
+    
+</div>

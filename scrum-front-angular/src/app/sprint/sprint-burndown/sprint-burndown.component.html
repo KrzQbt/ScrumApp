@@ -1,0 +1,38 @@
+<!-- <p>sprint-burndown works!</p>
+{{burndownData.sprintStartDate}} to 
+{{burndownData.sprintEndDate}} -->
+<!-- <h1 class="text-dark">{{sprint.startTime}}
+    {{sprint.endTime}}</h1> -->
+<div  id="chart" (window:resize)="onResize($event)">
+
+<google-chart *ngIf="isReady"
+     
+    
+
+
+[type]="chartData.type" 
+
+[data]="chartData.data" 
+
+[columns]="chartData.columnNames" 
+
+[options]="chartData.options" 
+
+[width]="chartData.width"
+
+[height]="chartData.height">
+
+  
+</google-chart>
+
+</div>
+
+<!-- <h2 *ngFor="let task of burndownData.taskList">
+    {{task.name}}
+</h2> -->
+
+
+
+<!-- <h2>dummy {{dateDummy}}</h2>
+<h2 *ngIf="totalTeamHours != null">total {{totalTeamHours}}</h2>
+<h2 *ngFor = "let sum of testSum"> {{sum}} </h2> -->

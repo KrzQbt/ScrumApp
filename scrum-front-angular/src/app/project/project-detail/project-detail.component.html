@@ -1,0 +1,147 @@
+
+<!-- <h1>project id: {{projectId}}</h1> -->
+
+<h2>{{projectBasics.name}}
+  <a [routerLink]="['manage']"><button class="btn btn-sm btn-outline-secondary">Manage project</button> </a>
+
+</h2>
+
+<!-- <app-project-detail-info></app-project-detail-info> -->
+
+
+<div class="row ">
+
+    <div class="col-4">
+        <div class="card text-center pallete-bg-1 text-white mb-3">
+            <div class="card-body">
+              <h3>Participation</h3>
+              <h4 class="display-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+                  <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"></path>
+                </svg>
+              </h4>
+              <a [routerLink]="['participation']" class="btn btn-outline-light btn-sm"> Manage </a>
+            </div>
+          </div>
+        <!--  -->
+        <!-- <h1>Team - participation w roles comp and link
+            <a [routerLink]="['participation']" > manage participation </a>
+        </h1> -->
+        <!--  -->
+    </div>
+
+    <div class="col-4">
+        <div class="card text-center pallete-bg-2 text-white mb-3">
+            <div class="card-body">
+              <h3>User stories</h3>
+              <h4 class="display-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
+                    <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"></path>
+                    <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"></path>
+                  </svg>
+              </h4>
+              <a [routerLink]="['stories']" class="btn btn-outline-light btn-sm">Manage</a>
+            </div>
+          </div>
+        
+    </div>
+
+    <div class="col-4">
+
+        <div class="card text-center pallete-bg-3 text-white mb-3">
+            <div class="card-body">
+              <h3>Create sprint</h3>
+              <h4 class="display-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+                  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"></path>
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path>
+                </svg>
+              </h4>
+              <a [routerLink]="['sprint/new']"  class="btn btn-outline-light btn-sm">Create</a>
+            </div>
+          </div>
+
+    
+
+
+    </div>
+
+
+
+</div>
+
+<div class="row ">
+    <div class="col-4">
+
+        <div class="card text-center pallete-bg-4 text-white mb-3">
+            <div class="card-body">
+              <h3>Create new backlog</h3>
+              <h4 class="display-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
+                  <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"></path>
+                  <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"></path>
+                </svg>
+              </h4>
+              <a [routerLink]="['backlog/new']" class="btn btn-outline-light btn-sm">Create</a>
+            </div>
+          </div>
+
+        <!-- <h1>pick items link
+            <a [routerLink]="['pick']" > pick items </a>
+        
+        </h1> -->
+    </div>
+
+    
+
+    <div class="col-4">
+
+        <div class="card text-center pallete-bg-5 text-white mb-3">
+            <div class="card-body">
+              <h3>Groom backlog 
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-collection" viewBox="0 0 16 16">
+                    <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"></path>
+                  </svg>
+              </h3>
+              <div class="scroll-list">
+              <app-project-backlog-listing [projectId]=projectId></app-project-backlog-listing>
+                </div>
+              
+            </div>
+          </div>
+  
+
+
+        <!-- <h1>Time report chart link/comp
+            <a [routerLink]="['report']" > time report </a>
+        </h1> -->
+        
+    </div>
+
+    <div class="col-4">
+        <div class="card text-center pallete-bg-6 text-white mb-3">
+            <div class="card-body">
+              <h3>Visit sprint 
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-stopwatch" viewBox="0 0 16 16">
+                <path d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z"></path>
+                <path d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z"></path>
+              </svg></h3>
+              
+              <div class="scroll-list">
+              <app-project-sprint-listing [projectId] = projectId ></app-project-sprint-listing>
+            </div>
+              <!-- <a [routerLink]="['time']" class="btn btn-outline-light btn-sm">Visit</a> -->
+            </div>
+          </div>
+
+
+        <!-- <h1>My Time management link
+            <a [routerLink]="['time']" > time form </a>
+        </h1> -->
+    </div>
+
+
+</div>
+
+
+

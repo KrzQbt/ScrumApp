@@ -1,0 +1,28 @@
+<p>user-page works!</p>
+
+<div *ngIf="edit==false">
+
+<h1>{{userData.username}}</h1>
+
+{{edit}}
+
+<h2>roles:</h2>
+<h2>{{userData.roles}}</h2>
+
+<h2 *ngFor ="let role of userData.roles"> {{role}}</h2>
+<button (click)="editChange()">edit</button>
+</div>
+
+<div *ngIf="edit==true">
+<h1>EDIT</h1>
+
+zarzadzanie rola
+dodaj
+
+
+
+<button (click)="editChange()">done</button>
+
+
+</div>
+

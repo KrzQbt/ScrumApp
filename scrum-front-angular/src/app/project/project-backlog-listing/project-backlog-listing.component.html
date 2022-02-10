@@ -1,0 +1,27 @@
+<!-- 
+
+<div *ngFor ="let backlog of backlogList;">
+    <h2>backlog with id {{backlog.id}} of project {{backlog.projectId}}</h2>
+    <h3>{{backlog.description}}</h3>
+    <h3>current {{backlog.current}}</h3>
+    <a [routerLink]="['/backlog/' , backlog.id]" > visit backlog {{backlog.id}}</a>
+    <br>
+    <br>
+
+
+
+</div> -->
+
+
+<div *ngFor ="let backlog of backlogList;">
+    <h5 *ngIf = "backlog.current">Backlog {{backlog.id}}(current) 
+        <a style="text-decoration: none; color: #fff;" [routerLink]="['/backlog/' , backlog.id]" > <button class="btn btn-sm btn-outline-light">Visit</button> </a>
+    </h5> 
+    <h5 *ngIf = "!backlog.current">Backlog {{backlog.id}}
+        <a style="text-decoration: none; color: #fff;" [routerLink]="['/backlog/' , backlog.id]" > <button class="btn btn-sm btn-outline-light">Visit</button> </a>
+    </h5> 
+
+</div>
+
+
+

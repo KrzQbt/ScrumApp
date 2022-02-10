@@ -1,0 +1,94 @@
+
+
+<!-- <h1>{{displayName}}</h1>
+<h1>{{form.itemId}}</h1> -->
+<div class="row justify-content-center">
+    <div class="col-6 ">
+
+        <h3>Create a task</h3>
+
+<br>
+
+<form  name="form"
+(ngSubmit)="onSubmit()"
+>
+
+<div class="form-group mb-3">
+    <label for="name">Backlog item</label>
+    <select  class="form-select"
+    name="name"
+    [(ngModel)]="form.itemId">
+
+    <option *ngFor ="let item of pickedItems" value={{item.id}}>{{item.name}}</option>
+
+    </select>
+    
+
+</div>
+
+<div class="form-group mb-3">
+    <label for="name">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      name="name"
+      [(ngModel)]="form.name"
+      
+    />
+
+</div>
+
+<div class="form-group mb-3">
+    <label for="description">Description</label>
+    <input
+      type="description"
+      class="form-control"
+      name="description"
+      [(ngModel)]="form.description"
+      
+      
+    />
+
+</div>
+<div class="form-group mb-3">
+    <label for="hours">Expected hours to finish</label>
+    <input
+      type="text"
+      class="form-control"
+      name="hours"
+      [(ngModel)]="form.hours"
+      
+      
+    />
+
+</div>
+
+<div class="form-group">
+    <button class="btn btn-primary btn-block" >Submit task<input  type = "submit" value=""style="display: none"></button>
+</div>
+
+</form>
+
+
+
+
+</div>
+<div class="col-4 ">
+    <h3>Existing tasks:</h3>
+    <div class="scroll-list">
+        <ul class="list-group list-group-flush">
+            <li *ngFor="let task of tasks" class="list-group-item">
+                <h5>{{task.name}} ({{statusPreetify(task.status)}})</h5>
+                <h6>{{task.description}}</h6>
+                <p>{{task.expectedHoursToFinish}}h</p>
+                <button class="btn btn-sm btn-danger" (click)="deleteTask(task.id)">Delete</button>
+            </li>
+        </ul>
+
+    </div>
+    </div>
+
+
+
+
+</div>

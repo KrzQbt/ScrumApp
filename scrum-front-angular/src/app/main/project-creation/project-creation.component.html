@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+  <div class="col-6 ">
+    <h3>Create project</h3>
+
+<form >
+    <div class="form-group mb-3">
+        <label for="day">Project name</label><br>
+      <textarea class="form-control" type="text" id="projectName" name="projectName" [(ngModel)]="form.projectName" > </textarea>
+      </div>
+
+
+<div class="form-group mb-3"> 
+
+    <label for="day">Pick your role:</label>
+
+    <select  class="form-select"
+    name="id"
+    [(ngModel)]="form.myRole">
+
+      <option *ngFor="let role of roles" value={{role}}>{{role}}</option>
+  
+  </select>
+</div>
+
+<div class="form-group">
+    <button class="btn btn-primary" >
+        <a routerLink="/main" (click)="onSubmit()" style="text-decoration: none; color:#fff;" > Start project</a>
+        <input  type = "submit" value=""style="display: none"></button>
+  </div>
+</form>
+
+
+</div>
+</div>
+ <!-- {{form.projectName}} - {{form.myRole}} -->

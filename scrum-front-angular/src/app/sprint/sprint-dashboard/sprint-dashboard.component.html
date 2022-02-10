@@ -1,0 +1,185 @@
+<!-- <p>sprint-dashboard works!</p>
+<h1>management w komponentach pojawiajacych sie z selectu</h1>
+<h1>set as current</h1> -->
+
+<!-- 
+<h1>Sprint {{sprintId}}</h1>
+
+<h2>{{sprint.description}}</h2>
+<h2 *ngIf = "sprint.current" >status: Current</h2>
+<h2>{{sprint.startTime}} to {{sprint.endTime}}</h2> -->
+<!-- <app-url-breadcrump [url]=breadcrumpUrl></app-url-breadcrump> -->
+
+<div class="row justify-content-center">
+    <div class="col-4">
+
+        <div class="card text-center   mb-3">
+            <div class="card-body">
+
+        <h2>Sprint {{sprintId}}</h2>
+
+        <h3>{{sprint.description}}</h3>
+        <h4>{{sprint.startTime}} to {{sprint.endTime}}</h4>
+        <h5 *ngIf = "sprint.current" >Status: Current</h5>
+        <a [routerLink]="['manage']"><button class="btn btn-sm btn-outline-secondary">Manage sprint</button> </a>
+         
+          </div>
+          
+        </div>
+        
+
+    </div>
+
+    <div class="col-8">
+
+        <div class="card text-center chart text-white mb-3">
+            <div class="card-body">
+                <app-sprint-burndown></app-sprint-burndown>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- <app-sprint-burndown></app-sprint-burndown> -->
+
+
+
+<div class="row ">
+    
+  
+  <div class="col-4">
+        <div class="card text-center pallete-bg-1 text-white mb-3">
+            <div class="card-body">
+              <h3>Participation</h3>
+              <h4 class="display-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+                  <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"></path>
+                </svg>
+              </h4>
+              <a [routerLink]="['participation']" class="btn btn-outline-light btn-sm"> Manage </a>
+            </div>
+          </div>
+        <!--  -->
+        <!-- <h1>Team - participation w roles comp and link
+            <a [routerLink]="['participation']" > manage participation </a>
+        </h1> -->
+        <!--  -->
+    </div>
+
+
+    <div class="col-4">
+        <div class="card text-center pallete-bg-2 text-white mb-3">
+            <div class="card-body">
+              <h3>Task board</h3>
+              <h4 class="display-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-grid-3x3" viewBox="0 0 16 16">
+                  <path d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13zM1.5 1a.5.5 0 0 0-.5.5V5h4V1H1.5zM5 6H1v4h4V6zm1 4h4V6H6v4zm-1 1H1v3.5a.5.5 0 0 0 .5.5H5v-4zm1 0v4h4v-4H6zm5 0v4h3.5a.5.5 0 0 0 .5-.5V11h-4zm0-1h4V6h-4v4zm0-5h4V1.5a.5.5 0 0 0-.5-.5H11v4zm-1 0V1H6v4h4z"></path>
+                </svg>
+              </h4>
+              <a [routerLink]="['board']" class="btn btn-outline-light btn-sm">Visit</a>
+            </div>
+          </div>
+        <!-- <h1>Task board link
+            <a [routerLink]="['board']" > sprint board </a>
+        </h1> -->
+    </div>
+
+
+
+    <div class="col-4">
+
+        <div class="card text-center pallete-bg-3 text-white mb-3">
+            <div class="card-body">
+              <h3>Manage tasks</h3>
+              <h4 class="display-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+                  <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"></path>
+                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"></path>
+                </svg>
+              </h4>
+              <a [routerLink]="['task']" class="btn btn-outline-light btn-sm">Manage</a>
+            </div>
+          </div>
+
+        <!-- <h1> from Pbi to task 
+            <a [routerLink]="['task']" > create tasks </a> 
+        
+        </h1> -->
+
+
+    </div>
+
+
+</div>
+<!-- row -->
+<div class="row ">
+
+    <div class="col-4">
+
+        <div class="card text-center pallete-bg-4 text-white mb-3">
+            <div class="card-body">
+              <h3>Pick Backlog items</h3>
+              <h4 class="display-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
+                  <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"></path>
+                  <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"></path>
+                </svg>
+              </h4>
+              <a [routerLink]="['pick']" class="btn btn-outline-light btn-sm">Pick</a>
+            </div>
+          </div>
+
+        <!-- <h1>pick items link
+            <a [routerLink]="['pick']" > pick items </a>
+        
+        </h1> -->
+    </div>
+
+    <div class="col-4">
+        <div class="card text-center pallete-bg-5 text-white mb-3">
+            <div class="card-body">
+              <h3>My Time management</h3>
+              <h4 class="display-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-calendar-check" viewBox="0 0 16 16">
+                  <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"></path>
+                  <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"></path>
+                </svg>
+              </h4>
+              <a [routerLink]="['time']" class="btn btn-outline-light btn-sm">Visit</a>
+            </div>
+          </div>
+
+
+        <!-- <h1>My Time management link
+            <a [routerLink]="['time']" > time form </a>
+        </h1> -->
+    </div>
+
+    <div class="col-4">
+
+        <div class="card text-center pallete-bg-6 text-white mb-3">
+            <div class="card-body">
+              <h3>Time report</h3>
+              <h4 class="display-4">
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-signpost-2" viewBox="0 0 16 16">
+                    <path d="M7 1.414V2H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h5v1H2.5a1 1 0 0 0-.8.4L.725 8.7a.5.5 0 0 0 0 .6l.975 1.3a1 1 0 0 0 .8.4H7v5h2v-5h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H9V6h4.5a1 1 0 0 0 .8-.4l.975-1.3a.5.5 0 0 0 0-.6L14.3 2.4a1 1 0 0 0-.8-.4H9v-.586a1 1 0 0 0-2 0zM13.5 3l.75 1-.75 1H2V3h11.5zm.5 5v2H2.5l-.75-1 .75-1H14z"></path>
+                  </svg> -->
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-bar-chart-line" viewBox="0 0 16 16">
+                    <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1V2zm1 12h2V2h-2v12zm-3 0V7H7v7h2zm-5 0v-3H2v3h2z"></path>
+                  </svg>
+              </h4>
+              <a [routerLink]="['report']" class="btn btn-outline-light btn-sm">View</a>
+            </div>
+          </div>
+  
+
+
+        <!-- <h1>Time report chart link/comp
+            <a [routerLink]="['report']" > time report </a>
+        </h1> -->
+        
+    </div>
+
+</div>
+

@@ -1,0 +1,65 @@
+<h1 >Edit backlog item</h1>
+<div mat-dialog-content>
+  
+  <div *ngFor="let pbi of data.backlog;">
+    <h4>{{pbi.name}}</h4>
+</div>
+<div >
+  <h3>{{data.backlog.name}}</h3>
+</div>
+
+
+<form >
+  <div class="form-group  mb-2">
+    <label >Backlog item name</label><br>
+  <input class="form-control" type="text" id="name" name="name" [(ngModel)]="data.backlog.name" > 
+  </div>
+
+  <div class="form-group  mb-2"> 
+    <label for="type">PBI type:</label>
+    <select  class="form-select"
+    name="type"
+    [(ngModel)]="data.backlog.type">
+      <option *ngFor="let type of pbiTypes" value={{type}}>{{type}}</option>
+   </select>
+</div>
+<div class="form-group  mb-2">
+  <label >Description</label><br>
+<textarea class="form-control" type="text" id="description" name="description" [(ngModel)]="data.backlog.description" > </textarea>
+
+</div>
+
+<!-- no story edit, you should delete and create new with no story -->
+<div class="form-group mb-2">
+  <label >Details - put detailed description of task and comments here</label><br>
+<textarea class="form-control " type="text" id="details" name="details" [(ngModel)]="data.backlog.details" > </textarea>
+</div>
+<div class="form-group mb-3">
+  <label >Release </label><br>
+<input class="form-control" type="text" id="release" name="release" [(ngModel)]="data.backlog.release" >
+</div>
+
+</form>
+
+
+  <mat-form-field appearance="fill">
+    <mat-label>Favorite Animal</mat-label>
+    name
+    <input matInput [(ngModel)]="data.backlog.name">
+    type
+    <input matInput [(ngModel)]="data.backlog.type">
+    description
+    <input matInput [(ngModel)]="data.backlog.description">
+    story
+    <input matInput [(ngModel)]="data.backlog.story">
+    details
+    <input matInput [(ngModel)]="data.backlog.details">
+    release
+    <input matInput [(ngModel)]="data.backlog.release">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  
+  <button class="btn btn-primary"  [mat-dialog-close]="data.backlog" >Done</button>
+</div>
+

@@ -1,0 +1,10 @@
+.pallete-bg-2{
+    background: #D64967;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #4A3A4F;
+    border-color: #4A3A4F;
+  }

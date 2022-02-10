@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+    
+    <div class="col-5 ">
+        <h3>Edit project {{project.name}}</h3>
+        <h3>Edit project {{project.id}}</h3>
+        <form >
+            <div class="form-group mb-3">
+                <label >Name</label><br>  
+              <textarea class="form-control" type="text" id="description" name="description" [(ngModel)]="project.name"></textarea>
+             </div>
+
+             <div class="form-group mb-3">
+               
+              
+                    <a (click)="onSubmit()"   style="text-decoration: none; color:#fff;" >
+                      <button class="btn btn-primary" >
+                        Save changes
+                      </button>
+            
+                    </a>
+              
+                  </div>
+
+        </form>
+
+    </div>
+
+
+    <div class="col-3 ">
+        <h3>Quick options </h3> 
+        <h5>Delete project <button class="btn btn-sm btn-danger " >
+            <a routerLink="/main"  style="text-decoration: none; color:#fff;"  (click)="deleteProject()">Delete</a>
+            <input  type = "submit" value=""style="display: none"></button>
+        </h5>
+    </div>
+
+
+</div>

@@ -1,0 +1,76 @@
+
+<div class="row justify-content-center">
+  <div class="col-6 ">
+    <h3>Create a sprint</h3>
+    <h4>{{project.name}}</h4>
+<form >
+    <div class="form-group mb-3">
+        <label >Descripton</label><br>
+      
+      
+      <textarea class="form-control" type="text" id="description" name="description" [(ngModel)]="form.description"></textarea>
+    
+    
+    </div>
+
+      <div class="form-group mb-3">
+        <label >Start date:</label><br>
+      <input class="form-control"  type="date" id="startTime" name="startTime" [(ngModel)]="form.startTime" > 
+      
+        </div>
+        <div class="form-group mb-3">
+            <label >End date:</label><br>
+          <input class="form-control" type="date" id="endTime" name="endTime" [(ngModel)]="form.endTime" > 
+          
+        </div>
+
+
+        <div class="form-group mb-3"> 
+
+            <label >Pick backlog</label>
+        
+            <select  class="form-select"
+            name="backlogId"
+            [(ngModel)]="form.backlogId">
+        
+              <option *ngFor="let backlog of backlogs" value={{backlog.id}}>{{backlog.id}} - {{backlog.description}}</option>
+          
+          </select> </div>
+
+          <div class="form-group mb-3"> 
+
+            <label >Pick sprint to copy participants from previous:</label>
+        
+            <select  class="form-select "
+            name="copyFromSprintWithId"
+            [(ngModel)]="form.copyFromSprintWithId" >
+        
+              <option *ngFor="let sprint of sprints" value={{sprint.id}}>{{sprint.id}}  {{sprint.description}}</option>
+          
+          </select>
+        </div>
+
+<div class="form-group mb-3"> 
+
+    <label for="day">Pick your role:</label>
+
+    <select  class="form-select "
+    name="id"
+    [(ngModel)]="form.sprintRole">
+
+      <option *ngFor="let role of roles" value={{role}}>{{role}}</option>
+  
+  </select>
+</div>
+
+<div class="form-group mb-3">
+    <button class="btn btn-primary" >
+        <a routerLink="../.." (click)="onSubmit()" style="text-decoration: none; color:#fff;" > Create sprint</a>
+        <input  type = "submit" value=""style="display: none"></button>
+  </div>
+
+</form>
+
+
+</div>
+</div>

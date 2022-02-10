@@ -1,0 +1,350 @@
+
+
+
+<div class="row justify-content-center" style="min-width: 1000px;">
+  <div class="col-2 brb bl pad0 bg-light">
+    <!-- <div    class="">
+      <div class=" " > {{backlogItem.name}} </div>
+      <div class="" > {{backlogItem.type}}</div>
+      <div class="" > #{{backlogItem.id}}</div>
+      <div class="" > 
+
+        <button  class="" >More</button>
+      </div>
+  </div> -->
+
+
+
+  
+      
+      <div class="card-body">
+        <h5 class="card-title">{{backlogItem.name}}</h5>
+      <p class="card-text">{{backlogItem.type}}</p>
+      <a href="#" class="btn btn-primary hovertext" [attr.data-hover]="'Description: ' + backlogItem.description+'&#10;' + backlogItem.description"  >Details</a>
+    </div>
+    
+
+
+
+  </div> 
+  <!-- pbi -->
+
+
+
+  <div class="col-2 brb pad0">
+    <div class="card min-height" style="min-height: 140px;" cdkDropList #freeList="cdkDropList" [cdkDropListData]="free"
+      [cdkDropListConnectedTo]="[takenList]" class="" (cdkDropListDropped)="drop($event)">
+      <!-- class="card-body rand3 "  -->
+      <div [ngClass]="{ 
+       'rand1' : color == 'rand1',
+      'rand2  ' : color == 'rand2', 'rand3  ' : color == 'rand3', 'rand4 ' : color == 'rand4','rand5 ' : color == 'rand5','rand6 ' : color == 'rand6' }"  style="min-height: 190px;" *ngFor="let item of free" cdkDrag  cdkDragLockAxis="x"  >
+        <h5 class="card-title">{{item.name}}</h5>
+      <!-- <h6 class="">{{item.description}}</h6> -->
+      <p class="card-text">{{item.expectedHoursToFinish}}h</p>
+        <button class="btn btn-outline-dark hovertext " style="max-width: 70px;"
+        [attr.data-hover]="'Description: ' + item.description+'&#10;' " 
+        >Details</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="col-2 brb pad0">
+    <div 
+      class="card min-height" style="min-height: 140px;"
+      cdkDropList
+      #takenList="cdkDropList"
+      [cdkDropListData]="taken"
+      [cdkDropListConnectedTo]="[freeList,todoList]"
+      class=""
+      (cdkDropListDropped)="drop($event)">
+
+      
+      <div [ngClass]="{ 
+        'rand1' : color == 'rand1',
+       'rand2  ' : color == 'rand2', 'rand3  ' : color == 'rand3', 'rand4 ' : color == 'rand4','rand5 ' : color == 'rand5','rand6 ' : color == 'rand6' }"
+       style="min-height: 190px;" *ngFor="let item of taken" cdkDrag  cdkDragLockAxis="x">
+       <h5 class="card-title">{{item.name}}</h5>
+      <!-- <h6 class="">{{item.description}}</h6> -->
+      <p class="card-text">{{item.expectedHoursToFinish}}h</p>
+        <button class="btn btn-outline-dark hovertext " style="max-width: 70px;" [attr.data-hover]="'Description: ' + item.description+'&#10;' " >Details</button>
+      </div>
+
+  
+    </div>
+    </div>
+
+  <div class="col-2 brb pad0">
+    <div 
+    class="card " style="min-height: 140px;"
+    cdkDropList
+    #todoList="cdkDropList"
+    [cdkDropListData]="todo"
+    [cdkDropListConnectedTo]="[takenList,doneList]"
+    class=""
+    (cdkDropListDropped)="drop($event)">
+
+    <div [ngClass]="{ 
+      'rand1' : color == 'rand1',
+     'rand2  ' : color == 'rand2', 'rand3  ' : color == 'rand3', 'rand4 ' : color == 'rand4','rand5 ' : color == 'rand5','rand6 ' : color == 'rand6' }"  style="min-height: 190px;" *ngFor="let item of todo" cdkDrag  cdkDragLockAxis="x">
+
+     <h5 class="card-title">{{item.name}}</h5>
+      <!-- <h6 class="">{{item.description}}</h6> -->
+      <p class="card-text">{{item.expectedHoursToFinish}}h</p>
+        <button class="btn btn-outline-dark  hovertext" style="max-width: 70px;" [attr.data-hover]="'Description: ' + item.description+'&#10;' " >Details</button>
+    </div>
+
+    
+  </div>
+  </div>
+
+  <div class="col-2 brb pad0" >
+    <div
+    style="min-height: 140px;"
+    cdkDropList
+    #doneList="cdkDropList"
+    [cdkDropListData]="done"
+    [cdkDropListConnectedTo]="[todoList]"
+    class=""
+    (cdkDropListDropped)="drop($event)">
+    <div [ngClass]="{ 
+      'rand1' : color == 'rand1',
+     'rand2  ' : color == 'rand2', 'rand3  ' : color == 'rand3', 'rand4 ' : color == 'rand4','rand5 ' : color == 'rand5','rand6 ' : color == 'rand6' }"  style="min-height: 190px;" *ngFor="let item of done" cdkDrag  cdkDragLockAxis="x">
+      <h5 class="card-title">{{item.name}}</h5>
+      <!-- <h6 class="">{{item.description}}</h6> -->
+      <p class="card-text">{{item.expectedHoursToFinish}}h</p>
+        <button class="btn btn-outline-dark  hovertext" style="max-width: 70px;" [attr.data-hover]="'Description: ' + item.description+'&#10;' " >Details</button>
+    </div>
+  </div>
+  </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="task-container" >
+   
+  <div    class="task-list  ">
+      <div class="task-box  c2 task-title" > {{backlogItem.name}} </div>
+      <div class="task-box  c2" > {{backlogItem.type}}</div>
+      <div class="task-box  c2" > #{{backlogItem.id}}</div>
+      <div class="task-box  c2-button" > 
+
+        <button  class="more-button" >More</button>
+      </div>
+  </div>
+
+</div>
+<br><br><br><br>
+
+<div class="example-container">
+   
+  
+    <div
+      cdkDropList
+      #freeList="cdkDropList"
+      [cdkDropListData]="free"
+      [cdkDropListConnectedTo]="[takenList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of free" cdkDrag  cdkDragLockAxis="x"  >
+        <h4 class="task-title">{{item.desc}}</h4>
+        <h4 class="task-title">{{item.status}}</h4>
+        <h4>#{{item.id}}</h4>
+        <button class="more-button">Details</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="example-container">
+    
+  
+    <div
+      cdkDropList
+      #takenList="cdkDropList"
+      [cdkDropListData]="taken"
+      [cdkDropListConnectedTo]="[freeList,todoList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of taken" cdkDrag  cdkDragLockAxis="x">
+        <h4 class="task-title">{{item.desc}}</h4>
+        <h4 class="task-title">{{item.status}}</h4>
+        <h4>#{{item.id}}</h4>
+        <button class="more-button">Details</button>
+      </div>
+
+    
+
+
+
+    </div>
+  </div>
+
+<div class="example-container">
+   
+  
+    <div
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todo"
+      [cdkDropListConnectedTo]="[takenList,doneList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of todo" cdkDrag  cdkDragLockAxis="x">
+        <h4 class="task-title">{{item.desc}}</h4>
+        <h4 class="task-title">{{item.status}}</h4>
+        <h4>#{{item.id}}</h4>
+        <button class="more-button">Details</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="example-container">
+    
+  
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListData]="done"
+      [cdkDropListConnectedTo]="[todoList]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of done" cdkDrag  cdkDragLockAxis="x">
+        <h4 class="task-title">{{item.desc}}</h4>
+        <h4 class="task-title">{{item.status}}</h4>
+        <h4>#{{item.id}}</h4>
+        <button class="more-button">Details</button>
+      </div>
+    </div>
+  </div>
+
+
+
+ -->
+
+
+
+
+
+
+
+<!-- 
+<div class="task-container" >
+   
+    <div    class="task-list  ">
+        <div class="task-box  c2 task-title" > {{backlogItem.name}} </div>
+        <div class="task-box  c2" > {{backlogItem.type}}</div>
+        <div class="task-box  c2" > #{{backlogItem.id}}</div>
+        <div class="task-box  c2-button" > 
+  
+          <button  class="more-button" >More</button>
+        </div>
+    </div>
+  
+  </div>
+  
+
+  <div class="example-container">
+     
+    
+      <div
+        cdkDropList
+        #freeList="cdkDropList"
+        [cdkDropListData]="free"
+        [cdkDropListConnectedTo]="[takenList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of free" cdkDrag  cdkDragLockAxis="x"  >
+          <h4 class="task-title">{{item.desc}}</h4>
+          <h4 class="task-title">{{item.status}}</h4>
+          <h4>#{{item.id}}</h4>
+          <button class="more-button">Details</button>
+        </div>
+      </div>
+    </div>
+  
+    <div class="example-container">
+      
+    
+      <div
+        cdkDropList
+        #takenList="cdkDropList"
+        [cdkDropListData]="taken"
+        [cdkDropListConnectedTo]="[freeList,todoList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of taken" cdkDrag  cdkDragLockAxis="x">
+          <h4 class="task-title">{{item.desc}}</h4>
+          <h4 class="task-title">{{item.status}}</h4>
+          <h4>#{{item.id}}</h4>
+          <button class="more-button">Details</button>
+        </div>
+  
+      
+  
+  
+  
+      </div>
+    </div>
+  
+  <div class="example-container">
+     
+    
+      <div
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="todo"
+        [cdkDropListConnectedTo]="[takenList,doneList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of todo" cdkDrag  cdkDragLockAxis="x">
+          <h4 class="task-title">{{item.desc}}</h4>
+          <h4 class="task-title">{{item.status}}</h4>
+          <h4>#{{item.id}}</h4>
+          <button class="more-button">Details</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="example-container">
+      
+    
+      <div
+        cdkDropList
+        #doneList="cdkDropList"
+        [cdkDropListData]="done"
+        [cdkDropListConnectedTo]="[todoList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of done" cdkDrag  cdkDragLockAxis="x">
+          <h4 class="task-title">{{item.desc}}</h4>
+          <h4 class="task-title">{{item.status}}</h4>
+          <h4>#{{item.id}}</h4>
+          <button class="more-button">Details</button>
+        </div>
+      </div>
+    </div> -->
+    
+  
+  
+  <!-- <p>done:</p>
+  <div *ngFor="let item of done"> {{item}}</div> -->

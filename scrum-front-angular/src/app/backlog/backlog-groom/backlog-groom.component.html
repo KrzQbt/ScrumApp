@@ -1,0 +1,51 @@
+
+
+<div class="card mt-5"></div>
+<div class="card-head"></div>
+<h4>Backlog grooming</h4>
+
+<button class="btn-primary btn" (click)="updateBacklog()">save</button> 
+<h1 *ngIf="updated">updated maybe add if could not update</h1>
+
+
+<div class="container">
+
+
+<div class="card-body  scroll-list">
+
+
+  <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="pbi-box" *ngFor="let pbi of backlog10items; let indexOfelement=index;" cdkDrag>  
+
+
+      
+
+      <div class="card">
+        <div class="card-header">
+          <h4>{{pbi.name}}</h4>
+        </div>
+        <div class="card-body">
+          <h5>{{pbi.type}}</h5>
+          <h5>{{pbi.description}}</h5>
+          <h5>id : {{pbi.id}}</h5>   
+          <h5>story : {{pbi.story}}</h5>   
+          
+
+          <button (click)="openDialog(indexOfelement)" class="btn btn-primary" >edit</button>
+          <button (click)="deleteBacklogItem(pbi.id)" class="btn btn-danger">delete</button>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  
+  
+
+
+
+
+</div>   
+
+
+</div>

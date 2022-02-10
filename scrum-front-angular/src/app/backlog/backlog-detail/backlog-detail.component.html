@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+  <div class="col-4 ">
+
+<h3>Backlog {{backlogId}} details</h3>
+      <h4>{{project.name}}</h4>
+
+<h4 *ngIf= "backlog.current">(current)</h4>
+
+<div *ngIf= "backlog.current != true">
+<button class="btn btn-primary" (click)="setCurrent()">set as Current</button>
+</div>
+
+</div>
+<div class="col-4 ">
+
+  <label for="day" >Choose activity</label>
+         <select  class="form-select"
+           name="selected"
+           [(ngModel)]="selected">
+           <option value="overview"> Backlog overview </option>
+           <option value="grooming"> Backlog grooming </option>
+           <option value="add"> Add new backlog items </option>
+         
+         </select>
+
+
+
+
+</div>
+
+</div>
+
+
+<div class="row justify-content-center">
+  <div class="col-8 ">
+
+    <div *ngIf="selected == 'overview'">
+      <app-backlog-overview  [backlogId] = backlogId  ></app-backlog-overview>
+    </div>
+    
+    <div *ngIf="selected == 'grooming'">
+    <app-backlog-groom  [backlogId] = backlogId></app-backlog-groom>
+    </div>
+    
+    <div *ngIf="selected == 'add'"> 
+      <app-backlog-item-creation [backlogId] = backlogId [projectId] = backlog.projectId></app-backlog-item-creation>
+    </div>
+  </div>
+
+</div>

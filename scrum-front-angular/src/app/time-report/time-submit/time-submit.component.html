@@ -1,0 +1,162 @@
+<div class="row justify-content-center">
+  <div class="col-6" style="text-align: center;">
+    <h2>Sprint {{sprintInfo.id}}</h2>
+    <h3>from {{sprintInfo.startTime}} to {{sprintInfo.endTime}}</h3>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+
+  <div class="col-10" id="chart" (window:resize)="onResize($event)">
+    
+    <!-- <div class="" style=" ">
+      <h1>Sprint {{sprintInfo.id}}</h1>
+    <h2>from {{sprintInfo.startTime}} to {{sprintInfo.endTime}}</h2>  
+    </div> -->
+
+  <google-chart *ngIf="isReady"
+
+    [type]="chartData.type" 
+
+    [data]="chartData.data" 
+
+    [columns]="chartData.columnNames" 
+
+    [options]="chartData.options" 
+
+    [width]="chartData.width"
+
+    [height]="chartData.height">
+
+      
+
+</google-chart>
+
+</div>
+
+</div>
+
+
+<div class="row justify-content-center">
+  <div class="col-4">
+    <h5>Set day preference</h5>
+    <form 
+(ngSubmit)="onSubmit()"
+>
+  <div class="form-group mb-3">
+    
+  <input class="form-control" type="date" id="day" name="day" [(ngModel)]="form.day" > 
+  
+</div>
+<div class="form-group mb-3">
+  <label for="day">amount of hours</label><br>
+<input class="form-control" type="text" id="hours" name="hours" [(ngModel)]="form.hours" > 
+
+</div>
+
+  <div class="form-group">
+
+    <button class="btn btn-primary " >save<input  type = "submit" value=""style="display: none"></button>
+    <h2 *ngIf="!dateInBounds"> date out of sprint limits</h2>
+    <h2 *ngIf="negativeHoursValue"> you cannot select negative values</h2>
+    <h2 *ngIf="tooMuchHours"> you cannot select more than 24 hours</h2>
+</div>
+
+</form>
+  </div>
+
+
+  <!-- delform -->
+  <div class="col-4">
+    <h5>Delete day preference</h5>
+<form>
+  <div class="form-group "> 
+    
+    <select  class="form-select "
+      name="id"
+      [(ngModel)]="delForm.dailyId">
+  
+        <option *ngFor="let pref of preference.dailyTimePreferences" value={{pref.id}}>{{pref.date}} for {{pref.availableForHours}} hours id {{pref.id}} </option>
+    
+    </select>
+  </div>
+  <div class="form-group btmarg">
+    <button class="btn btn-danger" (click)="onDelSubmit()">delete<input  type = "submit" value=""style="display: none"></button>
+  </div>
+  </form>
+  
+  {{delForm.dailyId}}
+  </div>
+
+</div>
+
+
+<!-- <form action=""
+(ngSubmit)="onSubmit()"
+#f="ngForm"
+novalidate>
+  <div class="form-group">
+    <label for="day">day:</label><br>
+  <input type="date" id="day" name="day" [(ngModel)]="form.day" > 
+  
+</div>
+<div class="form-group">
+  <label for="day">amount of hours</label><br>
+<input type="text" id="hours" name="hours" [(ngModel)]="form.hours" > 
+
+</div>
+
+  <div class="form-group">
+
+    <button class="btn btn-primary " >save<input  type = "submit" value=""style="display: none"></button>
+    <h2 *ngIf="!dateInBounds"> date out of sprint limits</h2>
+    <h2 *ngIf="negativeHoursValue"> you cannot select negative values</h2>
+    <h2 *ngIf="tooMuchHours"> you cannot select more than 24 hours</h2>
+</div>
+
+</form> -->
+
+
+  
+<!-- <google-chart 
+
+    [type]="chartData.type" 
+
+    [data]="chartData.data" 
+
+    [columns]="chartData.columnNames" 
+
+    [options]="chartData.options" 
+
+    [width]="chartData.width"
+
+    [height]="chartData.height">
+
+      
+
+</google-chart> -->
+
+
+<!-- 
+<form>
+<div class="form-group"
+
+
+> 
+  <label for="day">Delete day:</label>
+  <select  class="form-control"
+    name="id"
+    [(ngModel)]="delForm.dailyId">
+
+      <option *ngFor="let pref of preference.dailyTimePreferences" value={{pref.id}}>{{pref.date}} for {{pref.availableForHours}} hours id {{pref.id}} </option>
+  
+  </select>
+</div>
+<div class="form-group">
+  <button class="btn btn-danger" (click)="onDelSubmit()">delete<input  type = "submit" value=""style="display: none"></button>
+</div>
+</form>
+
+{{delForm.dailyId}}
+
+ -->

@@ -1,0 +1,94 @@
+<div class="row justify-content-center">
+  <div class="col-5 ">
+    <h3>Edit sprint {{sprint.id}}</h3>
+    <!-- <h4>{{project.name}}</h4> -->
+    <!-- {{sprint.id}}
+    {{sprint.projectId}}
+    {{sprint.startTime}}
+    {{sprint.endTime}}
+    {{sprint.description}}
+
+    {{sprint.backlogId}} -->
+
+    <form >
+    <div class="form-group mb-3">
+        <label >Descripton</label><br>
+      
+      <textarea class="form-control" type="text" id="description" name="description" [(ngModel)]="sprint.description"></textarea>
+    
+    
+    </div>
+
+      <div class="form-group mb-3">
+        <label >Start date:</label><br>
+      <!-- <input class="form-control"  type="date" id="startTime" name="startTime" [(ngModel)]="form.startTime" >  -->
+      <input class="form-control" [(ngModel)]="sprint.startTime"  type="date" id="startTime" name="startTime"  > 
+
+
+        </div>
+
+
+        <div class="form-group mb-3">
+            <label >End date:</label><br>
+          <!-- <input class="form-control" type="date" id="endTime" name="endTime" [(ngModel)]="form.endTime" >  -->
+          <input class="form-control" [(ngModel)]="sprint.endTime" type="date" id="endTime" name="endTime"> 
+        </div>
+
+
+        <div class="form-group mb-3"> 
+
+            <label >Pick backlog</label>
+            <select  class="form-select"
+            name="backlogId"
+            [(ngModel)]="sprint.backlogId">
+              <!-- <option value="null"> keep backlog </option> -->
+              <option *ngFor="let backlog of backlogs" value={{backlog.id}}>{{backlog.id}} - {{backlog.description}}</option>
+          </select> 
+        
+        </div>
+
+          
+
+<div class="form-group mb-3">
+    <!-- <button class="btn btn-primary" (click)="onSubmit()">
+        <a routerLink="../.."  style="text-decoration: none; color:#fff;" > Save changes</a>
+        <input  type = "submit" value=""style="display: none" ></button> -->
+  
+        <a (click)="onSubmit()" routerLink="../.."  style="text-decoration: none; color:#fff;" >
+          <button class="btn btn-primary" >
+            Save changes
+          </button>
+
+        </a>
+  
+      </div>
+
+
+
+</form>
+
+
+
+  </div>
+
+
+  <div class="col-3 ">
+      <h3>Quick options </h3> 
+      
+      <h5 *ngIf="!sprint.current" >Set as current <button (click)="setStatus('current')" class="btn btn-sm btn-primary " >
+        Current</button>
+    </h5>
+    <h5 *ngIf="!sprint.inPlaning">Set In Planning <button (click)="setStatus('inPlaning')" class="btn btn-sm btn-primary " >
+        In planning</button>
+    </h5>
+      
+        <h5 *ngIf="!sprint.finished" >Finish sprint <button (click)="setStatus('finished')" class="btn btn-sm btn-primary " >
+            Finish</button>
+        </h5>
+
+        <h5>Delete sprint <button class="btn btn-sm btn-danger " >
+            <a routerLink="/main"  style="text-decoration: none; color:#fff;"  (click)="deleteSprint()">Delete</a>
+            <input  type = "submit" value=""style="display: none"></button>
+        </h5>
+  </div>
+</div>

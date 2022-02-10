@@ -1,0 +1,18 @@
+.brbt{
+    border-right: rgb(182, 181, 181) 1px solid;
+    /* border-bottom: 1px solid rgb(182, 181, 181); */
+    border-top: 1px solid rgb(182, 181, 181);
+
+  }
+  .brad{
+    border-left: solid 1px solid rgb(182, 181, 181);
+    /* border-radius: 10px; */
+
+  }
+  .bl{
+    border-left: 1px solid rgb(182, 181, 181);
+    /* border-radius: 10px; */
+  }
+  .pad0{
+    padding: 1px;
+  }

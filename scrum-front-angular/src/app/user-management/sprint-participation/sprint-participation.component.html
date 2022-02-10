@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+    <div class="col-6 ">
+        <h3>Sprint participation</h3>
+        <!-- <h4>Sprint {{sprintId}}</h4> -->
+
+<form  name="form"
+(ngSubmit)="onSubmit()"
+#f="ngForm"
+novalidate>
+
+<!-- user choice -->
+<div class="form-group mb-3">
+    <label for="id">User</label>
+    <select  class="form-select "
+    name="id"
+    [(ngModel)]="form.userId">
+    <option *ngFor = "let user of userList" value={{user.id}}>
+        {{user.username}}
+        <p *ngFor = "let role of user.roles">{{rolePreetify(role)}}</p></option>
+        <option value="NONE">NONE</option>
+    </select>
+</div>
+<!-- role choice -->
+<div class="form-group mb-3">
+    <label for="id">Role</label>
+    <select  class="form-select "
+    name="role"
+    [(ngModel)]="form.role">
+    
+        <option *ngFor ="let role of roleList" value={{role}}>{{rolePreetify(role)}}</option>
+        <option value="NONE">NONE</option>
+
+    </select>
+</div>
+
+
+
+<div class="form-group">
+    <button class="btn btn-primary btn-block" >Set role<input  type = "submit" value=""style="display: none"></button>
+</div>
+
+</form>
+
+
+
+
+
+
+</div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-6 ">
+<ul class="list-group list-group-flush">
+    <li   *ngFor = "let participant of participantList" class="list-group-item">{{participant.username}} - {{ rolePreetify(participant.role)}} <button class="btn btn-danger btn-sm" (click)="removePart(participant.id)">remove</button></li>
+    
+  </ul>
+
+</div>
+</div>

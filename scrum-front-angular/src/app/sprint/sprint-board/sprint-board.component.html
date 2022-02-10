@@ -1,0 +1,28 @@
+<!-- <app-board-row *ngFor="let task of tasks;" [taskInput]=task></app-board-row> -->
+<!-- <div style="min-width: 1250px; max-width: 1250px;">
+<app-sprint-board-row  *ngFor="let task of tasks;" [taskInput]=task></app-sprint-board-row>
+</div> -->
+
+<div class="row justify-content-center  " style="min-width: 1000px;">
+<!-- <div class="bord"> -->
+    <div class="col-2 brbt bl pad0 bg-light ">
+        <h5 class="card-header">Backlog item</h5>
+    </div>
+    <div class="col-2 brbt pad0">
+        <h5 class="card-header">Free</h5>
+    </div>
+    <div class="col-2 brbt pad0">
+        <h5 class="card-header">Taken</h5>
+    </div>
+    <div class="col-2 brbt pad0">
+        <h5 class="card-header">In progress</h5>
+    </div>
+    <div class="col-2 brbt pad0">
+        <h5 class="card-header">Done</h5>
+    </div>
+<!-- </div> -->
+
+
+</div>
+
+<app-sprint-board-row  *ngFor="let task of tasks;" [taskInput]=task></app-sprint-board-row>
