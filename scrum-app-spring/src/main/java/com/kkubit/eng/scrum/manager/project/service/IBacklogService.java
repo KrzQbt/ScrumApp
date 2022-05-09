@@ -8,8 +8,8 @@ import java.util.LinkedList;
 
 public interface IBacklogService {
     Backlog getBacklog(Long backlogId);
-    LinkedList<BacklogItem> getBacklogItems(Long backlogId);
-    LinkedList<BacklogItem> getSortedBacklogItems(Long backlogId);
+    List<BacklogItem> getBacklogItems(Long backlogId);
+    List<BacklogItem> getSortedBacklogItems(Long backlogId);
     void updateBacklogItemList(LinkedList<BacklogItem> list);
     void executeBacklogPatchAction(Long backlogId, BacklogPatchActions bpa);
     void setBacklogAsCurrent(Long backlogId);
