@@ -11,16 +11,16 @@ import java.util.LinkedList;
 
 public interface IProjectService {
     void createNewProject(NewProject project, Principal principal);
-    LinkedList<Project> getAllProjects();
+    List<Project> getAllProjects();
     Project getProject(Long projectId);
-    LinkedList<Backlog> getBacklogList(Long pid);
+    List<Backlog> getBacklogList(Long pid);
     void initiateProjectAndBacklog();
-    LinkedList<UserStory> getProjectStories(Long projectId);
+    List<UserStory> getProjectStories(Long projectId);
     void createUserStory(Long projectId,UserStory userStory);
     void deleteStory(Long storyId);
     void updateProject(Long projectId, Project project);
     void deleteProject(Long projectId);
-    LinkedList<Project> getMyProjects(Principal principal);
+    List<Project> getMyProjects(Principal principal);
 
 
 
